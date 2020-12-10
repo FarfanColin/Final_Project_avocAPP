@@ -44,6 +44,7 @@ router.get('/checkout', function(req, res, next) {
     return res.redirect('/shopping-cart');
   }
   var cart = new Cart(req.session.cart);
+  req.session.cart = null;
   res.render('shop/checkout', {total: cart.totalPrice});
 });
 
