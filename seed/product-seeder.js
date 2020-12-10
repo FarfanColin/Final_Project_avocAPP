@@ -9,25 +9,25 @@ var products = [
         imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
         title: 'Gothic Game',
         description: 'Awesome Game',
-        price: 10
+        price: 15
     }),
     new Product({
         imagePath: 'https://d1r7xvmnymv7kg.cloudfront.net/sites_products/darksouls3/assets/img/DARKSOUL_facebook_mini.jpg',
         title: 'Otro uno',
         description: 'God',
-        price: 12
+        price: 14
     }),
     new Product({
         imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png',
         title: 'Otro dos',
         description: 'Great',
-        price: 11
+        price: 13
     }),
     new Product({
         imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5b/Astroneer_Image1.png',
         title: 'Otro tres',
         description: 'Great',
-        price: 11
+        price: 12
     }),
     new Product({
         imagePath: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Roblox_Logo_Black.svg',
