@@ -4,6 +4,7 @@ var Cart = require('../models/cart')
 
 var Product = require('../models/product');
 var Order = require('../models/order');
+const app = require('../app');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -83,6 +84,10 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
     req.session.cart = null;
     res.redirect('/');
   });
+});
+
+router.get('/user/email_sent', function(req, res, next) {
+  res.render('user/email_sent');
 });
 
 module.exports = router;
