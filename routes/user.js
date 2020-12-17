@@ -28,18 +28,18 @@ router.get('/logout', function (req, res, next) {
   res.redirect('/');
 });
 
-router.use('/', notLoggedIn, function (req, res, next) {
+router.use('/', notLoggedIn, function(req, res, next) {
   next();
 });
 
 router.get('/signup', function (req, res, next) {
   var messages = req.flash('error');
-  res.render('user/signup', { csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
+  res.render('user/signup', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
 });
 
 router.post('/signup', passport.authenticate('local.signup', {
   failureRedirect: '/user/signup',
-  failuereFlash: true
+  failureFlash: true
 }), function (req, res, next) {
   if (req.session.oldUrl) {
     var oldUrl = req.session.oldUrl;
@@ -57,7 +57,7 @@ router.get('/signin', function (req, res, next) {
 
 router.post('/signin', passport.authenticate('local.signin', {
   failureRedirect: '/user/signin',
-  failuereFlash: true
+  failureFlash: true
 }), function (req, res, next) {
   if (req.session.oldUrl) {
     var oldUrl = req.session.oldUrl;
