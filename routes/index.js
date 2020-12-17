@@ -80,7 +80,9 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
   var order = new Order({
     user: req.user,
     cart: cart,
-    address: req.body.address,
+    phone:req.body.phone,
+    email: req.body.email,
+    surname: req.body.surname,
     name: req.body.name
   });
   order.save(function (err, result) {

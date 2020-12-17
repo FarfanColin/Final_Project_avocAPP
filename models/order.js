@@ -4,7 +4,9 @@ var Schema = mongoose.Schema;
 var schema = new Schema({
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     cart: {type: Object, required: true},
-    address: {type: String, required: true},
+    phone: {type: String, required: true},
+    email: {type: String, required: true},
+    surname: {type: String, required: true},
     name: {type: String, required: true}
 });
 
