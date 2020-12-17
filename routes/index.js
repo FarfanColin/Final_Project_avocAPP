@@ -19,6 +19,10 @@ router.get('/', function (req, res, next) {
   });
 });
 
+router.get('/user/email_sent', function(req, res, next) {
+  res.render('user/email_sent');
+});
+
 router.get('/add-to-cart/:id', function (req, res) {
   var productId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
@@ -84,10 +88,6 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
     req.session.cart = null;
     res.redirect('/');
   });
-});
-
-router.get('/user/email_sent', function(req, res, next) {
-  res.render('user/email_sent');
 });
 
 module.exports = router;

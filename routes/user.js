@@ -23,6 +23,10 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
   });
 });
 
+router.get('/email_sent', function(req, res, next) {
+  res.render('user/email_sent');
+});
+
 router.get('/logout', function (req, res, next) {
   req.logout();
   res.redirect('/');
@@ -38,17 +42,20 @@ router.get('/signup', function (req, res, next) {
 });
 
 router.post('/signup', passport.authenticate('local.signup', {
+  successRedirect: '/user/email_sent',
   failureRedirect: '/user/signup',
   failureFlash: true
-}), function (req, res, next) {
-  if (req.session.oldUrl) {
-    var oldUrl = req.session.oldUrl;
-    req.session.oldUrl = null;
-    res.redirect(oldUrl);
-  } else {
-    res.redirect('/user/profile');
-  }
-});
+}));
+
+// , function (req, res, next) {
+//   if (req.session.oldUrl) {
+//     var oldUrl = req.session.oldUrl;
+//     req.session.oldUrl = null;
+//     res.redirect(oldUrl);
+//   } else {
+//     res.redirect('/user/profile');
+//   }
+// });
 
 router.get('/signin', function (req, res, next) {
   var messages = req.flash('error');
@@ -68,13 +75,12 @@ router.post('/signin', passport.authenticate('local.signin', {
   }
 });
 
-
 module.exports = router;
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
-  }
+  } 
   res.redirect('/');
 }
 
