@@ -1,6 +1,7 @@
 var passport = require('passport');
 var User = require('../models/user');
 var LocalStrategy = require('passport-local').Strategy;
+var send =  require('./email')();
 
 passport.serializeUser(function (user, done) {
     done(null, user.id);
@@ -37,10 +38,13 @@ passport.use('local.signup', new LocalStrategy({
         var newUser = new User();
         newUser.email = email;
         newUser.password = newUser.encryptPassword(password);
+       
         newUser.save(function(err, result) {
+            
            if (err) {
                return done(err);
            }
+           send.sendEmail(email);
            return done(null, newUser);
         });
     });

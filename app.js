@@ -11,22 +11,8 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
-// var sgMail = require('@sendgrid/mail');
-// sgMail.setApiKey("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");
-
-// var msg = {
-//   to: "facebookcjfc@hotmail.com",
-//   from: "facebookcjfc@hotmail.com",
-//   subject: "Testing Node",
-//   text: "This is awesome"
-// };
-// sgMail.send(msg, function (err, info) {
-//   if (err) {
-//     console.log("Email Not Sent");
-//   } else {
-//     console.log("Email sent success");
-//   }
-// });
+var nodemailer = require('nodemailer');
+var { getMaxListeners } = require('process');
 
 var routes = require('./routes/index');
 var userRoutes = require('./routes/user');
@@ -37,7 +23,9 @@ mongoose.connect('mongodb://localhost:27017/shopping');
 require('./config/passport');
 
 // view engine setup
-app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
+app.engine('.hbs', expressHbs({
+  defaultLayout: 'layout', 
+  extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
