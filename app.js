@@ -16,6 +16,7 @@ var { getMaxListeners } = require('process');
 
 var routes = require('./routes/index');
 var userRoutes = require('./routes/user');
+var adminRoutes = require('./routes/admin');
 
 var app = express();
 
@@ -53,6 +54,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use('/admin', adminRoutes);
 app.use('/user', userRoutes);
 app.use('/', routes);
 

@@ -9,6 +9,20 @@ var Cart = require('../models/cart');
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
+router.get('/orders', isLoggedIn, function (req, res, next) {
+  Order.find({order: req.order}, function(err, orders) {
+    if(err) {
+      return res.write('Error');
+    }
+    var cart;
+    orders.forEach(function(order) {
+      cart = new Cart(order.cart);
+      order.items = cart.generateArray();
+    });
+    res.render('admin/orders', {orders:orders });
+  });
+});
+
 router.get('/profile', isLoggedIn, function (req, res, next) {
   Order.find({user: req.user}, function(err, orders) {
     if(err) {
