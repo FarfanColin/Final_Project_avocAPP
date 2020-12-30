@@ -9,14 +9,21 @@
                     <ul class="list-group">
                         {{# each this.items }}
                             <li class="list-group-item">
-                                <span class="badge">{{ this.price }}</span>
-                                {{ this.item.title }} | {{ this.qty }} Units
+                                <span class="badge">$ {{ this.price }}</span>
+                                Item: {{ this.item.title }} || Pieces: {{ this.qty }}
                             </li>
                         {{/each}}
                     </ul>
                 </div>
                 <div class="panel-footer">
-                    <strong>Total Price: ${{ this.cart.totalPrice }}</strong>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Total Price: ${{ this.cart.totalPrice }}</strong>
+                        </li>   
+                        <li class="list-group-item">
+                            <strong>Date to be picked: {{ this.time }}</strong>
+                        </li>   
+                    </ul>
                 </div>
             </div>
         {{/each}}

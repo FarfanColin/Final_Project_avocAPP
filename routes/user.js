@@ -61,16 +61,6 @@ router.post('/signup', passport.authenticate('local.signup', {
   failureFlash: true
 }));
 
-// , function (req, res, next) {
-//   if (req.session.oldUrl) {
-//     var oldUrl = req.session.oldUrl;
-//     req.session.oldUrl = null;
-//     res.redirect(oldUrl);
-//   } else {
-//     res.redirect('/user/profile');
-//   }
-// });
-
 router.get('/signin', function (req, res, next) {
   var messages = req.flash('error');
   res.render('user/signin', { csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });

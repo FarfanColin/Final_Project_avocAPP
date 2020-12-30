@@ -13,6 +13,8 @@ var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
 var nodemailer = require('nodemailer');
 var { getMaxListeners } = require('process');
+require('dotenv').config();
+
 
 var routes = require('./routes/index');
 var userRoutes = require('./routes/user');

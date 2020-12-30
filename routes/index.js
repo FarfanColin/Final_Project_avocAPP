@@ -84,7 +84,7 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
     email: req.body.email,
     surname: req.body.surname,
     name: req.body.name,
-    birthday: req.body.birthday
+    time: req.body.time
   });
   order.save(function (err, result) {
     req.flash('success', 'Successfully bought product!');

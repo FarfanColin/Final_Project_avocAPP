@@ -2,7 +2,59 @@
     <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
         <h1>Checkout</h1>
         <h4>Your Total: ${{total}}</h4>
-        
+
+        <script>
+
+        function createPDF() {
+            
+            if(document.getElementById("name").value == "" || document.getElementById("surname").value == "" || document.getElementById("phone").value == "" || document.getElementById("email").value == "" || document.getElementById("time").value == "") {
+                alert("Please enter all the fields");
+            }
+            
+            else {
+
+                var doc = new jsPDF();
+
+                doc.setFillColor(60,179,113);
+                doc.ellipse(100, 20, 20, 10, 'F');
+                doc.setFontType("bold");
+                doc.setTextColor(255,255,255);
+                doc.setFontSize(20);
+                doc.text(85, 20, "avocAPP");
+                doc.setTextColor(0,0,0);
+                doc.setFontSize(10);
+                doc.setFontType("normal");
+                doc.text(95, 40, "Receipt");
+                
+                doc.setTextColor(150);
+                doc.setFontSize(15);
+                doc.setFontType("normal");
+                doc.text(document.getElementById("name").value, 10, 60);
+                doc.text(document.getElementById("surname").value, 10, 80);
+                doc.text(document.getElementById("phone").value, 10, 100);
+                doc.text(document.getElementById("email").value, 10, 120);
+                doc.text(document.getElementById("time").value, 10, 140);
+
+                doc.setTextColor(0, 0, 0);
+                doc.setFontSize(20);
+                doc.setFont("helvetica");
+                doc.setFontType("bold");
+                doc.text(10, 50, "NAME:");
+                doc.text(10, 70, "SURNAME:");
+                doc.text(10, 90, "PHONE:");
+                doc.text(10, 110, "EMAIL:");
+                doc.text(10, 130, "HOUR/DATE TO PICK UP:");
+
+
+                doc.setFontType("bold");
+                doc.setTextColor(0,0,0);
+                doc.setFontSize(30);
+                doc.text(70, 180, "THANK YOU!!");
+
+                doc.save("avocAPP_receipt.pdf");
+            }
+        }
+        </script>
         <form action="/checkout" method="post" id="checkout-form">
             <div class="row">
                 <div class="col-xs-12">
@@ -36,14 +88,15 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <p><strong>When can you pick your product (AT LEAST TWO HOURS AFTER MADE THE ORDER)?</strong>
-                        <input type="datetime-local" id="birthday" required name="birthday">
+                        <label for="time">When can you pick your product <br>(AT LEAST TWO HOURS AFTER MADE THE ORDER)?</label>
+                        <input type="datetime-local" id="time" class="form-control" required name="time">
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">Buy now</button>
+            <button onclick="createPDF()" class="btn btn-success">Buy now</button>
         </form>
     </div>
 </div>
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>

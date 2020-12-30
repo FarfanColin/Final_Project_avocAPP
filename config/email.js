@@ -1,4 +1,6 @@
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
+const EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
 
 module.exports = () => {
 
@@ -19,8 +21,9 @@ module.exports = () => {
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-            user: 'avoccapp@gmail.com', // generated ethereal user
-            pass: 'uno12345678'  // generated ethereal password
+            user: process.env.EMAIL, // generated ethereal user
+
+            pass: process.env.PASSWORD  // generated ethereal password
         },
         tls:{
           rejectUnauthorized:false
@@ -31,7 +34,7 @@ module.exports = () => {
       let mailOptions = {
           from: '"avocAPP" <no-reply@gmail.com>', // sender address
           to: email, // list of receivers
-          subject: 'Node Contact Request', // Subject line
+          subject: 'Email Confirmation', // Subject line
           html: output // html body
       };
     
