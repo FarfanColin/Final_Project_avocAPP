@@ -37,6 +37,10 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
   });
 });
 
+router.get('/aboutUs', function(req, res, next) {
+  res.render('user/aboutUs');
+});
+
 router.get('/email_sent', function(req, res, next) {
   res.render('user/email_sent');
 });
@@ -80,6 +84,7 @@ router.post('/signin', passport.authenticate('local.signin', {
 });
 
 module.exports = router;
+
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
