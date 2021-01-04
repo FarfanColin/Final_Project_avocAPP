@@ -41,6 +41,10 @@ router.get('/aboutUs', function(req, res, next) {
   res.render('user/aboutUs');
 });
 
+router.get('/contactUs', function(req, res, next) {
+  res.render('user/contactUs');
+});
+
 router.get('/email_sent', function(req, res, next) {
   res.render('user/email_sent');
 });
