@@ -1,27 +1,27 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h1>User Profile</h1>
-        <hr>
-        <h2>My Orders</h2>
+        <h1 style="color: white;">User Profile</h1>
+        <hr style="width:50%;text-align:left;margin-left:0;height:2px;border-width:0;color:yellow;background-color: yellow">
+        <h2 style="color: white;">My Orders</h2>
         {{# each orders }}
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <ul class="list-group">
+            <div class="panel panel-default" style="background-color: #C4B7B7">
+                <div class="panel-body" style="background-color: #C4B7B7">
+                    <ul class="list-group" style="background-color: #C4B7B7" >
                         {{# each this.items }}
-                            <li class="list-group-item">
-                                <span class="badge">€ {{ this.price }}</span>
-                                Item: {{ this.item.title }} || Pieces: {{ this.qty }}
+                            <li class="list-group-item" style="background-color: #C4B7B7" >
+                                <span class="badge" style="background-color: #C4B7B7; color:#000000" >€ {{ this.price }}</span>
+                                <strong> {{ this.item.title }} || Pieces: {{ this.qty }}</strong>
                             </li>
                         {{/each}}
                     </ul>
                 </div>
-                <div class="panel-footer">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>Total Price: €{{ this.cart.totalPrice }}</strong>
+                <div class="panel-footer" style="background-color: #C4B7B7" >
+                    <ul class="list-group" style="background-color: #C4B7B7" >
+                        <li class="list-group-item" style="background-color: #C4B7B7">
+                            <strong style="font-size: medium;">Total Price: €{{ this.cart.totalPrice }}</strong>
                         </li>   
-                        <li class="list-group-item">
-                            <strong>Date to be picked: {{ this.time }}</strong>
+                        <li class="list-group-item" style="background-color: #C4B7B7">
+                            <strong style="font-size: medium;">Date to be picked: {{ this.time }}</strong>
                         </li>   
                     </ul>
                 </div>
