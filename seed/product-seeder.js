@@ -8,7 +8,7 @@ var products = [
     new Product({
         imagePath: 'images/SOY.png',
         title: 'SOY',
-        description: 'Chunks of protein. None of the meat Meat-free protein just how we like it. Naturally.This product is suitable for Vegetarians and vegans. Meat alternative',
+        description: 'Chunks of protein. None of the meat Meat-free protein just how we like it. Naturally.This product is suitable for Vegetarians and vegans.',
         price: 5
     }),
     new Product({
@@ -20,25 +20,25 @@ var products = [
     new Product({
         imagePath: 'images/CHEESE.png',
         title: 'CHEESE',
-        description: 'These vegan cheese is suitable for vegans and vegetarians. Plus they are low in saturated fat, low in sugar and a great source of protein and fibre... they have everything you need!',
+        description: 'These vegan cheese is suitable for vegans and vegetarians. Plus they are low in saturated fat, low in sugar and a great source of protein.',
         price: 5
     }),
     new Product({
         imagePath: 'images/PROTEIN.png',
         title: 'PROTEIN',
-        description: 'This supplement is made by vegan nutritionists for vegans. Its 100% natural, plant based recipe uses only the finest pure ingredients. Zero cruelty option for vegans.',
+        description: 'This supplement is made by vegan nutritionists for vegans. Its 100% natural, plant based recipe uses only the finest pure ingredients.',
         price: 25
     }),
     new Product({
         imagePath: 'images/TOFU.png',
         title: 'TOFU',
-        description: 'Made of condensed soy milk that is pressed into solid white blocks in a process quite similar to cheesemaking. Suitable for vegans and vegetarians',
+        description: 'Made of condensed soy milk that is pressed into solid white blocks in a process quite similar to cheesemaking.',
         price: 5
     }),
     new Product({
         imagePath: 'images/B12.png',
         title: 'B12',
-        description: 'Vegan Vitamin B12 is a must-have supplement for anyone following a vegan or plant-based lifestyle. Our super-convenient tablets make it easy for you to hit you recommended requirements of the essential vitamins B12.',
+        description: 'Vegan Vitamin B12 is a must-have supplement for anyone following a vegan or plant-based lifestyle.',
         price: 15
     }),
     new Product({
@@ -62,7 +62,7 @@ var products = [
     new Product({
         imagePath: 'images/SEITAN.png',
         title: 'SEITAN',
-        description: 'A health care product, thanks to its excellent properties can be used to obtain a healthy diet, with ingredients that can prevent degenerative diseases. It provides high amounts of protein and fiber, is low in carbohydrates.',
+        description: 'A health care product, thanks to its excellent properties can be used to obtain a healthy diet, it can prevent degenerative diseases.',
         price: 10
     })
 ];

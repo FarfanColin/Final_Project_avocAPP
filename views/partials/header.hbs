@@ -1,3 +1,4 @@
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,20 +9,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">CATALOGUE</a>
+            <i class="iconify" data-icon="noto-v1:avocado" data-inline="false" style="font-size: xx-large;"></i><strong style="font-size: xx-large; color: teal;"> avocAPP</strong>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                    <a href="/">
+                        <i class="fa fa-book" aria-hidden="true"></i> Catalogue
+                    </a>
+                </li>
+                <li>
                     <a href="/shopping-cart/">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                     <span class="badge">{{session.cart.totalQty}}</span>
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> User Management <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> User <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         {{# if login }}
                             <li><a href="/user/profile">User Account</a></li>

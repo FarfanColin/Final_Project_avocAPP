@@ -9,19 +9,26 @@
 {{# each products }}
 <div class="row">
     {{# each this }}
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail" style="background-color: #CCD1D3">
-            <img src="{{ this.imagePath }}" alt="..." class="img-responsive">
-            <div class="caption">
-                <strong><h3 style="text-align: center;">{{ this.title }}</strong></h3>
-                <p class="description">{{ this.description }}</p>
-                <div class="clearfix">
-                    <div class="price pull-left">€{{ this.price }}</div>
-                    <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Add to the Cart</a>
+
+        <section class="col-sm-6 col-md-4">
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">{{ this.title }}</span>
+                    <img class="shop-item-image" src="{{ this.imagePath }}">
+                    <br><br>
+                    <p class="description">{{ this.description }}</p>
+                    <div class="shop-item-details" >
+                        <span class="shop-item-price">€{{ this.price }}</span>
+                        
+                        
+                        
+                    </div>
+                    <div class="shop-item-details">
+                    <a href="/add-to-cart/{{this._id}}" class="btn btn-primary shop-item-button" role="button">Add to Cart</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
     {{/each}}
 </div>
 {{/each}}
@@ -31,5 +38,52 @@
         text-align: justify;
         text-justify: inter-word;
         color: #CDC1C1;
+}
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.shop-item-image {
+    height: 250px;
+    border:2px solid whitesmoke;
+    outline-color: #5044E0;  
+    outline-style:outset;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.shop-item-details {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: white;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 </style>
