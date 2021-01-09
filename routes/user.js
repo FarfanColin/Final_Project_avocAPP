@@ -41,7 +41,7 @@ router.get('/aboutUs', function(req, res, next) {
   res.render('user/aboutUs');
 });
 
-router.get('/contactUs', function(req, res, next) {
+router.get('/contactUs', isLoggedIn, function(req, res, next) {
   res.render('user/contactUs');
 });
 
@@ -94,7 +94,7 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   } 
-  res.redirect('/');
+  res.redirect('/user/signin');
 }
 
 function notLoggedIn(req, res, next) {

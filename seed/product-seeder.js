@@ -2,13 +2,13 @@ var Product = require('../models/product');
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/shopping');
+mongoose.connect('mongodb://localhost:27017/myDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 var products = [
     new Product({
         imagePath: 'images/SOY.png',
         title: 'SOY',
-        description: 'Chunks of protein. None of the meat Meat-free protein just how we like it. Naturally.This product is suitable for Vegetarians and vegans.',
+        description: 'Chunks of protein. None of the meat Meat-free protein just how we like it. Naturally.',
         price: 5
     }),
     new Product({
@@ -20,13 +20,13 @@ var products = [
     new Product({
         imagePath: 'images/CHEESE.png',
         title: 'CHEESE',
-        description: 'These vegan cheese is suitable for vegans and vegetarians. Plus they are low in saturated fat, low in sugar and a great source of protein.',
+        description: 'These vegan cheese is suitable for vegans and vegetarians. Plus they are low in saturated fat, and low in sugar.',
         price: 5
     }),
     new Product({
         imagePath: 'images/PROTEIN.png',
         title: 'PROTEIN',
-        description: 'This supplement is made by vegan nutritionists for vegans. Its 100% natural, plant based recipe uses only the finest pure ingredients.',
+        description: 'This supplement is made by vegan nutritionists for vegans. Its 100% natural, a plant based recipe.',
         price: 25
     }),
     new Product({
@@ -50,7 +50,7 @@ var products = [
     new Product({
         imagePath: 'images/CHOCOLATE.png',
         title: 'CHOCOLATE',
-        description: 'For all of you chocolate-loving vegans out there! Vegan chocolate. Chocolate is made from cacao beans, which are grown on cacao trees.',
+        description: 'For all of you chocolate-loving vegans out there! Vegan chocolate. Chocolate is made from cacao beans.',
         price: 15
     }),
     new Product({
@@ -62,7 +62,7 @@ var products = [
     new Product({
         imagePath: 'images/SEITAN.png',
         title: 'SEITAN',
-        description: 'A health care product, thanks to its excellent properties can be used to obtain a healthy diet, it can prevent degenerative diseases.',
+        description: 'A health care product, thanks to its excellent properties can be used to obtain a healthy diet.',
         price: 10
     })
 ];

@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
   var successMsg = req.flash('success')[0];
   Product.find(function (err, docs) {
     var productChunks = [];
-    var chunkSize = 3;
+    var chunkSize = 4;
     for (var i = 0; i < docs.length; i += chunkSize) {
       productChunks.push(docs.slice(i, i + chunkSize));
     }
@@ -65,7 +65,7 @@ router.get('/remove/:id', function(req, res, next) {
   res.redirect('/shopping-cart');
 });
 
-router.get('/shopping-cart', function (req, res, next) {
+router.get('/shopping-cart',isLoggedIn, function (req, res, next) {
   if (!req.session.cart) {
     return res.render('shop/shopping-cart', { products: null });
   }
@@ -86,6 +86,8 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
     return res.redirect('/shopping-cart');
   }
   var cart = new Cart(req.session.cart);
+  var statusOrder = "ordered";
+  var picked = new Date("January 1, 2021 00:00:00");
   var order = new Order({
     user: req.user,
     cart: cart,
@@ -93,7 +95,9 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
     email: req.body.email,
     surname: req.body.surname,
     name: req.body.name,
-    time: req.body.time
+    time: req.body.time,
+    status: statusOrder,
+    pickedAt: picked
   });
   order.save(function (err, result) {
     req.flash('success', 'Successfully bought product!');

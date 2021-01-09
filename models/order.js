@@ -8,7 +8,9 @@ var schema = new Schema({
     email: {type: String, required: true},
     surname: {type: String, required: true},
     name: {type: String, required: true},
-    time: {type: Date, required: true}
+    time: {type: Date, required: true},
+    status: {type: String, required: false},
+    pickedAt: {type: Date, required:false}
 });
 
 module.exports = mongoose.model('Order', schema);
