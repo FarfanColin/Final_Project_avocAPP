@@ -1,4 +1,9 @@
 //The purpose of this page is to send a email verification,once the user has signed up, confirming that the account was created successfull
+//We are using the "Nodemailer" module from node.js
+//References for this page:
+///https://nodemailer.com/about/
+///https://www.youtube.com/channel/UC81OIFgbiCv9lE2ws07lsjA
+//The Email and Password are stored on my .env file, as we can understand these are not visible
 const nodemailer = require('nodemailer');
 const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
@@ -6,6 +11,7 @@ const PASSWORD = process.env.PASSWORD;
 module.exports = () => {
 
   const sendEmail = async (email) => {
+    //In the following lines, the body for the email is described
     const output = `
         <h2><p>THANK YOU FOR REGISTER WITH US</p><h2>
         <h3>CONTACT DETAILS</h3>
@@ -16,27 +22,27 @@ module.exports = () => {
         <p>Now you can start order online, just go back to the home page</p>
       `;
 
-    // create reusable transporter object using the default SMTP transport
+    // Setting the port by the "Gmail host", using the default SMTP transport
     let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true, // true for 465, false for other ports
+      host: 'smtp.gmail.com', //As the web application will only works with Gmail account, the host will be set with Gmail
+      port: 465, //The port for Gmail is 465
+      secure: true, // True for 465, false for other ports
       auth: {
-        user: process.env.EMAIL, // generated ethereal user
+        user: process.env.EMAIL, // Email used in the nodemailer account
 
-        pass: process.env.PASSWORD  // generated ethereal password
+        pass: process.env.PASSWORD  // Password used in the nodemailer account
       },
       tls: {
         rejectUnauthorized: false
       }
     });
 
-    // setup email data with unicode symbols
+    // Setting email data
     let mailOptions = {
-      from: '"avocAPP" <no-reply@gmail.com>', // sender address
-      to: email, // list of receivers
-      subject: 'Email Confirmation', // Subject line
-      html: output // html body
+      from: '"avocAPP" <no-reply@gmail.com>', // Email/Name where the email is being sent
+      to: email, // Receiver(s)
+      subject: 'Email Confirmation', // Subject
+      html: output // Body
     };
 
     // send mail with defined transport object
