@@ -1,8 +1,13 @@
+//The way how the cart will interact is defined in this file by this constrcutor
 module.exports = function Cart(oldCart) {
+    //We are using a boolean "or(||)" operator to get either the field by itself or an empty object
     this.items = oldCart.items || {};
     this.totalQty = oldCart.totalQty || 0;
     this.totalPrice = oldCart.totalPrice || 0;
 
+    //Important to emphisize:
+    //The item details will be grouped, so the item details wont be repeated with a huge list
+    //This function will check the new queries vs to the previous queries, so the items wont be repeated at the time they r being added
     this.add = function(item, id) {
         var storedItem = this.items[id];
         if (!storedItem) {
@@ -42,6 +47,7 @@ module.exports = function Cart(oldCart) {
         delete this.items[id];
     };
 
+    //This function will display the items within an array, referenced by the id
     this.generateArray = function() {
         var arr = [];
         for (var id in this.items) {

@@ -3,16 +3,19 @@ var User = require('../models/user');
 var LocalStrategy = require('passport-local').Strategy;
 var send =  require('./email')();
 
+//This function will ask passsport to store the user into the session
 passport.serializeUser(function (user, done) {
     done(null, user.id);
 });
 
+//After the user object attaches to the request
 passport.deserializeUser(function (id, done) {
     User.findById(id, function (err, user) {
         done(err, user);
     });
 });
 
+//This strategy will create a new user by validating the input and checking possible errors
 passport.use('local.signup', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
@@ -37,6 +40,7 @@ passport.use('local.signup', new LocalStrategy({
         }
         var newUser = new User();
         newUser.email = email;
+        //The next line is using the methods created on the user file, on the model folder
         newUser.password = newUser.encryptPassword(password);
        
         newUser.save(function(err, result) {
@@ -50,6 +54,9 @@ passport.use('local.signup', new LocalStrategy({
     });
 }));
 
+//The strategy to sign in will be the next one, what this strategy does is to look for the user,
+//if the user is not found will throw an error message. If everything goes right, it will return 
+//the user
 passport.use('local.login', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',

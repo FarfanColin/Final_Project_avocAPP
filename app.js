@@ -22,6 +22,7 @@ var adminRoutes = require('./routes/admin');
 
 var app = express();
 
+//If the database is not created, automatically it will be created
 mongoose.connect('mongodb://localhost:27017/myDB', { useNewUrlParser: true, useUnifiedTopology: true });
 require('./config/passport');
 
@@ -36,11 +37,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(validator());
 app.use(cookieParser());
+//Structuring the session by the JavaScript object, the one that it allows to initialize the session
 app.use(session({
   secret: 'mysecret', 
   resave: false, 
   saveUninitialized: false,
+  //Indicates to open the connection on mongoose
   store: new MongoStore({ mongooseConnection: mongoose.connection}),
+  //Indicates the duration of the session
   cookie: { maxAge:180 * 60 * 1000 }
 }));
 app.use(flash());
@@ -48,6 +52,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//By this middleware, it will be possible to ejecute a function that interact globally, that
+//will interact with the log in task
 app.use(function(req, res, next) {
   res.locals.login = req.isAuthenticated();
   res.locals.session = req.session;
