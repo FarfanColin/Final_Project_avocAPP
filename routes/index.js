@@ -23,6 +23,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
+//To confirm that an email has been sent to the user inbox, a "email sent" message will appear to confirm this action
 router.get('/user/email_sent', function (req, res, next) {
   res.render('user/email_sent');
 });
@@ -45,6 +46,7 @@ router.get('/add-to-cart/:id', function (req, res) {
   });
 });
 
+//By this router, the total amount of items will decrease by one, not going anywhere but the cart page
 router.get('/reduce/:id', function (req, res, next) {
   var productId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
@@ -54,6 +56,7 @@ router.get('/reduce/:id', function (req, res, next) {
   res.redirect('/cart');
 });
 
+//By this router, the total amount of items will increase by one, not going anywhere but the cart page
 router.get('/increase/:id', function (req, res, next) {
   var productId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
@@ -63,6 +66,7 @@ router.get('/increase/:id', function (req, res, next) {
   res.redirect('/cart');
 });
 
+//By this router, the total amount of items will be deleted, not going anywhere but the cart page
 router.get('/remove/:id', function (req, res, next) {
   var productId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
@@ -83,6 +87,7 @@ router.get('/cart', isLoggedIn, function (req, res, next) {
   res.render('store/cart', { products: cart.generateArray(), totalPrice: cart.totalPrice });
 });
 
+//This router will bring the customer to the checkout page
 router.get('/checkout', isLoggedIn, function (req, res, next) {
   if (!req.session.cart) {
     return res.redirect('/cart');
@@ -121,6 +126,8 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
 
 module.exports = router;
 
+//This function will use passport, and will check if the user has made log in, in this case
+//the function is set as logged in, redirecting it to the log in page
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();

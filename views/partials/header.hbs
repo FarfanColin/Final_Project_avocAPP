@@ -5,7 +5,8 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <i class="iconify" data-icon="noto-v1:avocado" data-inline="false" style="font-size: xx-large;"></i><strong style="font-size: xx-large; color: teal;"> avocAPP</strong>
+            <i class="iconify" data-icon="noto-v1:avocado" data-inline="false" style="font-size: xx-large;"></i><strong
+                style="font-size: xx-large; color: teal;"> avocAPP</strong>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,23 +19,29 @@
                 <li>
                     <a href="/cart/">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
-                    {{!--Using the session defined on the app.js, it is possible to use it in the next line, so it will possible to add items keeping the previous quantity--}}
-                    <span class="badge">{{session.cart.totalQty}}</span>
+                        {{!--Using the session defined on the app.js, it is possible to use it in the next line, so it
+                        will possible to add items keeping the previous quantity--}}
+                        <span class="badge">{{session.cart.totalQty}}</span>
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> User <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> User <span
+                            class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        {{!--By using these conditionals, it is possible to determine if the user is logged in, giving a two option choice either;
-                        User account or Logout. If the user is not logged in, just the alternatives options will be; Sign in or Logged in. It is 
-                        importnat to emphitize that the login function was defined on the app.js file as globally so it is possible to use it in this file--}}
+                        {{!--By using these conditionals, it is possible to determine if the user is logged in, giving a
+                        two option choice either;
+                        User account or Logout. If the user is not logged in, just the alternatives options will be;
+                        Sign in or Logged in. It is
+                        importnat to emphitize that the login function was defined on the app.js file as globally so it
+                        is possible to use it in this file--}}
                         {{# if login }}
-                            <li><a href="/user/profile">User Account</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/user/logout">Logout</a></li>
+                        <li><a href="/user/profile">User Account</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/user/logout">Logout</a></li>
                         {{ else }}
-                            <li><a href="/user/signup">Sign Up</a></li>
-                            <li><a href="/user/login">Log In</a></li>
+                        <li><a href="/user/signup">Sign Up</a></li>
+                        <li><a href="/user/login">Log In</a></li>
                         {{/if}}
                     </ul>
                 </li>
@@ -54,12 +61,10 @@
 </nav>
 
 <style>
-    
     a:hover,
     a:active {
         color: #ffb901;
         text-decoration: none;
         outline: 0;
     }
-
 </style>

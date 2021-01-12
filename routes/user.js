@@ -10,6 +10,7 @@ var Cart = require('../models/cart');
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
+//This router will allow the admin to check the status of each order made
 router.get('/orders', isLoggedIn, function (req, res, next) {
   Order.find({order: req.order}, function(err, orders) {
     if(err) {
@@ -41,23 +42,28 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
   });
 });
 
+//This is a simple router that take the use to know more about the shop on the "About Us" page
 router.get('/aboutUs', function(req, res, next) {
   res.render('user/aboutUs');
 });
 
+//This router will head the user to the "Contact Us" page where is gonna be possible ask for information to the admin
 router.get('/contactUs', isLoggedIn, function(req, res, next) {
   res.render('user/contactUs');
 });
 
+//To confirm that an email has been sent to the user inbox, a "email sent" message will appear to confirm this action
 router.get('/email_sent', function(req, res, next) {
   res.render('user/email_sent');
 });
 
+//At the moment that the user desire to leave the session, the "Log out" task will head to the home page
 router.get('/logout', function (req, res, next) {
   req.logout();
   res.redirect('/');
 });
 
+//This router support the rest of the pages to link them to the home page
 router.use('/', notLoggedIn, function(req, res, next) {
   next();
 });

@@ -3,29 +3,29 @@
         <h1>ORDERS</h1>
         <hr>
         {{# each orders }}
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <ul class="list-group">
-                        {{# each this.items }}
-                            <li class="list-group-item">
-                                <span class="badge">{{ this.price }}</span>
-                                {{ this.item.title }} | {{ this.qty }} Units
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
-                <div class="panel-footer">
-                    <strong>Total Price: {{ this.name }}</strong>
-                    <div class="form-group">
-                        <label for="sel1">STATUS:</label>
-                        <select class="form-control" id="sel1">
-                            <option>ORDERED</option>
-                            <option>WAITING TO BE PICKED</option>
-                            <option>PICKED</option>
-                        </select>
-                    </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="list-group">
+                    {{# each this.items }}
+                    <li class="list-group-item">
+                        <span class="badge">{{ this.price }}</span>
+                        {{ this.item.title }} | {{ this.qty }} Units
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <strong>Total Price: {{ this.name }}</strong>
+                <div class="form-group">
+                    <label for="sel1">STATUS:</label>
+                    <select class="form-control" id="sel1">
+                        <option>ORDERED</option>
+                        <option>WAITING TO BE PICKED</option>
+                        <option>PICKED</option>
+                    </select>
                 </div>
             </div>
+        </div>
         {{/each}}
     </div>
 </div>
