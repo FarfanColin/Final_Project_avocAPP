@@ -1,12 +1,12 @@
 //It is importante to mention the order for each router, these routes belongs to  the index
 var express = require('express');
 var router = express.Router();
-var Cart = require('../models/cart')
+var Cart = require('../schemas/cart')
 
 //As it is gonna be necessary to use the product model, the next variable is importing such file
-var Product = require('../models/product');
+var Product = require('../schemas/product');
 //As it is gonna be necessary to use the order model, the next variable is importing such file
-var Order = require('../models/order');
+var Order = require('../schemas/order');
 const app = require('../app');
 
 //By this router it will be possible to get the items and display each one on my home page.

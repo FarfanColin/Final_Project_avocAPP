@@ -1,6 +1,6 @@
 //Within this file it will be possible to validate the data entered by the user on the different inputs
 var passport = require('passport');
-var User = require('../models/user');
+var User = require('../schemas/user');
 var LocalStrategy = require('passport-local').Strategy;
 var send = require('./email')();
 

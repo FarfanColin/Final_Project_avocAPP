@@ -3,8 +3,8 @@ var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport');
 
-var Order = require('../models/order');
-var Cart = require('../models/cart');
+var Order = require('../schemas/order');
+var Cart = require('../schemas/cart');
 
 var csrfProtection = csrf();
 router.use(csrfProtection);
