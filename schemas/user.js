@@ -6,7 +6,10 @@ var bcrypt = require('bcryptjs');
 //To structure the fields, it is necessary to define the data types
 var userSchema = new Schema({
     email: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    fname: { type: String, required: true },
+    sname: { type: String, required: true },
+    phone: { type: String, required: true }
 });
 
 //By the "Bcrypt" module it is possible to hash the password applying the next method
