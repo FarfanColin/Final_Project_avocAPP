@@ -1,3 +1,5 @@
+//References for this page:
+//https://github.com/Napat07/Nextjs_projectlab/blob/aaeb9b3bc25e0e463aba2ee9bd5d2bf62fcb1e30/server/models/Cart.js
 //The way how the cart will interact is defined in this file by this constrcutor
 module.exports = function Cart(oldCart) {
     //We are using a boolean "or(||)" operator to get either the field by itself or an empty object

@@ -1,8 +1,10 @@
-//The purpose of this page is to send a email verification,once the user has signed up, confirming that the account was created successfull
-//We are using the "Nodemailer" module from node.js
 //References for this page:
 ///https://nodemailer.com/about/
-///https://www.youtube.com/channel/UC81OIFgbiCv9lE2ws07lsjA
+///Esterling Accime - https://www.youtube.com/channel/UC81OIFgbiCv9lE2ws07lsjA
+///Nodemailer - Send Emails From Your Node.js App - https://www.youtube.com/watch?v=nF9g1825mwk
+//The purpose of this page is to send a email verification,once the user has signed up, confirming that the account was created successfull
+//We are using the "Nodemailer" module from node.js
+//It is important to mention that there were different places where the code was taken, I preferred to did this by watching the video
 //The Email and Password are stored on my .env file, as we can understand these are not visible
 const nodemailer = require('nodemailer');
 const EMAIL = process.env.EMAIL;

@@ -1,3 +1,9 @@
+//Reference for the code:
+//http://www.passportjs.org/packages/
+//Youtube: "Passport JS User Authentication (Node + Passport + Express + Angular)" - https://www.youtube.com/playlist?list=PLYQSCk-qyTW2ewJ05f_GKHtTIzjynDgjK
+//Youtube: "OAuth (Passport.js) Tutorial #15 - Serializing Users" - https://www.youtube.com/watch?v=-PuMp5tQ8Jw
+//Youtube: "Register And Login And Authentication Using Node.js With Passport.js (passport-local strategy)" - https://www.youtube.com/watch?v=qUM8zSb9QJw
+//It is important to mention that there were different places where the code was taken, I preferred to did this by watching the video
 //Within this file it will be possible to validate the data entered by the user on the different inputs
 var passport = require('passport');
 var User = require('../schemas/user');

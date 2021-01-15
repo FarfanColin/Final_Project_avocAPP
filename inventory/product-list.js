@@ -1,5 +1,8 @@
-//If it is necessary to add items to my web application, one option is by this file,
-//another option could be by mongoose or by MongoDB
+//References for this page:
+//https://mongoosejs.com/
+//"Connect mongodb with node js using mongoose and Create schema || Node js - 11 (Creative Developer)" - https://www.youtube.com/watch?v=6_HI2GxRG6M
+//It is important to mention that there were different places where the code was taken, I preferred to did this by watching the video
+//If it is necessary to add items to my web application, one option is by this file, another option could be by mongoose or by MongoDB
 var Product = require('../schemas/product');
 var mongoose = require('mongoose');
 
