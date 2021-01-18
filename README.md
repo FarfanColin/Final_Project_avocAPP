@@ -28,11 +28,23 @@ project will use different collections
 * Git BASH, to interact with the GitHub account, besides of the VSC terminal. This is not a must be, but 
 I like it because it is fast and simple.
 
+##Functional Requirements
+> Every functionality implicates an interaction between the web application and the user:
+* The user will visit the web application and will navigate throughout the side.
+* Once the user is interested on one item, it will be necessary to register
+* Being that the user is already registered, the next time to visit the site, it will be just necessary to log in, so all the orders made will be registered on its account.
+* The user will have the opportunity to add as much items as it desires, and those products will go to their cart.
+* Once the user is done with the shopping, it will be possible to procced to the checkout, where it has to be mandatory to confirm their personal data, so an invoice will be originated from the site.
+* There is a special section named “Contact Us”, where the user can send a message concerning to the products announced on the web application.
+* The last but not least, the “About Us” section where the customer will find a brief description about avocAPP and how the company is committed with the world.
 
 ## Technologies Implemented
 * Front End
   * HBS
-* CSS
+* Front End
+ **HTML
+HBS
+CSS
 JQuery
 Bootstrap
 React js
@@ -45,14 +57,6 @@ Mongoose
 MongoDB Compass
 * Run-time environment
 Node js
-
-
-## Example usage
-> As an example, in the web page we have a project with the name "Bug Tracker", this plan allows us
-to solve a problem we are facing, so every time that the user is having issues of any matter, just
-post a new issue on the web page and later on the admin itself or an user will give support on the 
-comments section and once the problem is solved or it doesnt have anything else to add, it will be
-closed by the admin.
 
 ## Author
 > My name is Christian Jesus Farfan Colin, I am originally from Mexico nowadays I am studying a higher
