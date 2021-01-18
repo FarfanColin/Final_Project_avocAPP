@@ -23,7 +23,7 @@
 * Visual Studio Code, as we need to have a code editor.
 * Git BASH, to interact with the GitHub account, besides of the VSC terminal. This is not a must be, but I like it because it is fast and simple.
 
-##Functional Requirements
+## Functional Requirements
 > Every functionality implicates an interaction between the web application and the user:
 * The user will visit the web application and will navigate throughout the side.
 * Once the user is interested on one item, it will be necessary to register
@@ -35,23 +35,20 @@
 
 ## Technologies Implemented
 * Front End
-  * HBS
-* Front End
- **HTML
-HBS
-CSS
-JQuery
-Bootstrap
-React js
+ * HTML
+ * HBS
+ * CSS
+ * JQuery
+ * Bootstrap
+ * React js
 * Back End
-Express js
-Node js
+ * Express js
 * Database
-MongoDB
-Mongoose
-MongoDB Compass
+ * MongoDB
+ * Mongoose
+ * MongoDB Compass
 * Run-time environment
-Node js
+ * Node js
 
 ## Author
-> My name is Christian Jesus Farfan Colin, I am originally from Mexico nowadays I am studying a higher diploma in Science in Computing at College of Computing and Technology (CCT), place where I was able to sharp my skills as developer.
+> <p align="justify"> My name is Christian Jesus Farfan Colin, I am originally from Mexico nowadays I am studying a higher diploma in Science in Computing at College of Computing and Technology (CCT), place where I was able to sharp my skills as developer. </p>
