@@ -2,9 +2,9 @@
 //https://www.w3schools.com/bootstrap/
 //https://getbootstrap.com/docs/5.0/getting-started/introduction/
 --}}
-{{!--The signup page will verificate the data entered by the user and create a new account--}}
+{{!--The login page will validate the data entered by the user--}}
 <div class="login-box">
-    <h2>Sign Up</h2>
+    <h2>Log In</h2>
     {{!--By the variable "hasErrors" is gonna be possible to use our "Flash" package, then display a message indicating
     where the error is coming from--}}
     {{#if hasErrors}}
@@ -14,22 +14,10 @@
         {{/each}}
     </div>
     {{/if}}
-    <form action="/user/signup" method="post">
-        <div class="user-box">
-            <input type="text" name="fname" required="fname">
-            <label>Name</label>
-        </div>
-        <div class="user-box">
-            <input type="text" name="sname" required="sname">
-            <label>Surname</label>
-        </div>
-        <div class="user-box">
-            <input type="text" name="phone" required="phone">
-            <label>Phone</label>
-        </div>
+    <form action="/user/login" method="post">
         <div class="user-box">
             <input type="text" name="email" required="email">
-            <label>E-Mail</label>
+            <label>E-mail</label>
         </div>
         <div class="user-box">
             <input type="password" name="password" required="password">
@@ -37,13 +25,15 @@
         </div>
         {{!--This is the token tha csrf will use to protect the session once the user is navigating through the web
         application, the configuration will hide the token by itself--}}
-        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+        <input type="hidden" name="_csrf" value="{{csrfToken }}">
         <p class="full">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            <button type="submit">Sign Up</button>
+            <button type="submit">Log In</button>
         </p>
+        {{!--If the user doesnt have an account, it will give the option to the user to create an account--}}
     </form>
+    <p style="text-align: center; color: white;">Don't have an account? <a href="/user/signup">Sign up instead!</a></p>
 </div>

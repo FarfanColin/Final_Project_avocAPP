@@ -1,0 +1,135 @@
+{{!--References for this page:
+//https://www.w3schools.com/bootstrap/
+//https://getbootstrap.com/docs/5.0/getting-started/introduction/
+--}}
+<div class="login-box">
+    <h2>Checkout<br>Total: €{{total}}</h3>
+    <script>
+        //This function will create and design the PDF file that will be available to save or download by the user
+        function createPDF() {
+
+            //Setting the fields to take into the PDF file
+            if (document.getElementById("name").value == "" || document.getElementById("surname").value == "" || document.getElementById("phone").value == "" || document.getElementById("email").value == "" || document.getElementById("time").value == "") {
+                alert("Please enter all the fields");
+            }
+
+            else {
+
+                var doc = new jsPDF();
+                
+                //Defining style on each of the lines that will be written into the file
+                //The following lines will define the head
+                doc.setFillColor(60, 179, 113);
+                doc.ellipse(100, 20, 20, 10, 'F');
+                doc.setFontType("bold");
+                doc.setTextColor(255, 255, 255);
+                doc.setFontSize(20);
+                doc.text(85, 20, "avocAPP");
+                doc.setTextColor(0, 0, 0);
+                doc.setFontSize(10);
+                doc.setFontType("normal");
+                doc.text(95, 40, "Receipt");
+
+                //The following lines will define the body of the page
+                doc.setTextColor(150);
+                doc.setFontSize(15);
+                doc.setFontType("normal");
+                doc.text(document.getElementById("name").value, 10, 60);
+                doc.text(document.getElementById("surname").value, 10, 80);
+                doc.text(document.getElementById("phone").value, 10, 100);
+                doc.text(document.getElementById("email").value, 10, 120);
+                doc.text(document.getElementById("time").value, 10, 140);
+
+                //The following lines will define the body of the page
+                doc.setTextColor(0, 0, 0);
+                doc.setFontSize(20);
+                doc.setFont("helvetica");
+                doc.setFontType("bold");
+                doc.text(10, 50, "NAME:");
+                doc.text(10, 70, "SURNAME:");
+                doc.text(10, 90, "PHONE:");
+                doc.text(10, 110, "EMAIL:");
+                doc.text(10, 130, "HOUR/DATE TO PICK UP:");
+
+                //The following lines will define the bottom of the page
+                doc.setFontType("bold");
+                doc.setTextColor(0, 0, 0);
+                doc.setFontSize(30);
+                doc.text(70, 180, "THANK YOU!!");
+
+                doc.save("avocAPP_receipt.pdf");
+            }
+        }
+    </script>
+    <form action="/checkout" method="post" id="checkout-form">
+        <div class="user-box">
+            <input type="text" id="name" required name="name">
+            <label>Name</label>
+        </div>
+        <div class="user-box">
+            <input type="text" id="surname" required name="surname">
+            <label>Surname</label>
+        </div>
+        <div class="user-box">
+            <input type="text" id="phone" required name="phone">
+            <label>Phone Number</label>
+        </div>
+        <div class="user-box">
+            <input type="text" id="email" required name="email" onkeydown="validation()">
+            <label>E-mail</label>
+            <span id="text"></span>
+        </div>
+        <br>
+        <div class="user-box">
+            <div class="form-group">
+                <br><br><br><br>
+                <input type="datetime-local" max="9999-12-31T23:59" min="2021-01-01T00:00" id="time"
+                    class="form-control" required name="time">
+
+                <label for="time" style="text-align: center;">When can you pick your product <br>(AT LEAST TWO HOURS
+                    AFTER MADE THE ORDER)?</label>
+            </div>
+        </div>
+        <p class="full">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button onclick="createPDF()">Order now</button>
+        </p>
+    </form>
+</div>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+{{!--The email validation will be checked using the following code--}}
+<script type="text/javascript">
+    function validation() {
+      var form = document.getElementById("checkout-form");
+      var email = document.getElementById("email").value;
+      var text = document.getElementById("text");
+      var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  
+      if (email.match(pattern)) 
+      {
+        form.classList.add("valid");
+        form.classList.remove("invalid");
+        text.innerHTML = "Email address valid";
+        text.style.color = "#00ff00";
+      }
+      else {
+        form.classList.remove("valid");
+        form.classList.add("invalid");
+        text.innerHTML = "Please enter a valid email address";
+        text.style.color = "#ff0000";
+      }
+  
+      if (email == "") 
+      {
+        form.classList.remove("valid");
+        form.classList.remove("invalid");
+        text.innerHTML = "";
+        text.style.color = "#00ff00";
+      }
+    }
+</script>

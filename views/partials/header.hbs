@@ -1,39 +1,76 @@
-<nav class="navbar navbar-default">
+{{!--References for this page:
+//https://www.w3schools.com/bootstrap/
+//https://getbootstrap.com/docs/5.0/getting-started/introduction/
+--}}
+{{!--It was possible to add extra icons using this reference--}}
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+{{!--This code will be load as a head on each hbs page--}}
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Brand</a>
+            <a href="/">
+            <i class="iconify" data-icon="noto-v1:avocado" data-inline="false" style="font-size: xx-large;"></i><strong
+                style="font-size: xx-large; color: teal;"> avocAPP</strong>
+                </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/shopping-cart/">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
-                    <span class="badge">{{session.cart.totalQty}}</span>
+                    <a href="/">
+                        <i class="fa fa-book" aria-hidden="true"></i> Catalogue
+                    </a>
+                </li>
+                <li>
+                    <a href="/cart/">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                        {{!--Using the session defined on the app.js, it is possible to use it in the next line, so it
+                        will possible to add items keeping the previous quantity--}}
+                        <span class="badge">{{session.cart.totalQty}}</span>
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> User Management <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> User <span
+                            class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        {{!--By using these conditionals, it is possible to determine if the user is logged in, giving a
+                        two option choice either;
+                        User account or Logout. If the user is not logged in, just the alternatives options will be;
+                        Sign in or Logged in. It is
+                        importnat to emphitize that the login function was defined on the app.js file as globally so it
+                        is possible to use it in this file--}}
                         {{# if login }}
-                            <li><a href="/user/profile">User Account</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/user/logout">Logout</a></li>
+                        <li><a href="/user/profile">User Account</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/user/logout">Logout</a></li>
                         {{ else }}
-                            <li><a href="/user/signup">Sign Up</a></li>
-                            <li><a href="/user/signin">Sign In</a></li>
+                        <li><a href="/user/signup">Sign Up</a></li>
+                        <li><a href="/user/login">Log In</a></li>
                         {{/if}}
                     </ul>
                 </li>
+                <li>
+                    <a href="/user/contactUs">
+                        <i class="fa fa-phone" aria-hidden="true"></i> Contact Us
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/aboutUs">
+                        <i class="fa fa-users" aria-hidden="true"></i> About Us
+                    </a>
+                </li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+    </div>
 </nav>
+
+<style>
+    a:hover,
+    a:active {
+        color: #ffb901;
+        text-decoration: none;
+        outline: 0;
+    }
+</style>
