@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-//The code on this page was automatically created by express-generator
+//www file
+//The code on this file was automatically created by express-generator
 
 /**
  * Module dependencies.
