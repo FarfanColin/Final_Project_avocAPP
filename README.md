@@ -9,7 +9,7 @@
 * [Author](#Author)
 
 ## Project Context
-> <p style='text-align: justify;'> I would like more people were aware about on how many meat-free and free-cruelty products are available to buy, the main goal I have in mind is to create a web site where people could go there and check the list of products. I completely understand that this project takes more than two months to get it done, so I would like to develop the fundamentals and start building this final project. </p>
+> <p align="justify"> I would like more people were aware about on how many meat-free and free-cruelty products are available to buy, the main goal I have in mind is to create a web site where people could go there and check the list of products. I completely understand that this project takes more than two months to get it done, so I would like to develop the fundamentals and start building this final project. </p>
 
 ## Areas to cover
 > This project will use many technologies, reason why it is important to know the basic functionality of each tool applied.
