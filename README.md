@@ -30,9 +30,9 @@ I like it because it is fast and simple.
 
 
 ## Technologies Implemented
-*Front End
-  *HBS
-*CSS
+* Front End
+  * HBS
+* CSS
 JQuery
 Bootstrap
 React js
