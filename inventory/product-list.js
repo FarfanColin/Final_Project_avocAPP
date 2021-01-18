@@ -6,7 +6,7 @@
 var Product = require('../schemas/product');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/myDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/myDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 var products = [
     new Product({
