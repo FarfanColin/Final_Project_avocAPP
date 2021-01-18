@@ -1,46 +1,52 @@
-# FINAL CA
-> Through the following lines, we are going to review my project.
+# FINAL PROJECT: avocAPP
+> Through the following lines, I would like to explain what is my project about.
 
 ## Table of contents
-* [Functionality](#Functionality)
-* [Set it up](#Set-it-up)
-* [Technologies used](#technologies-used)
-* [Example usage](#Example-usage)
-* [Changelog](#Changelog)
-* [Roadmap](#Roadmap)
+* [Project Context](#Project-Context)
+* [Areas to cover](#Areas-to-cover)
+* [Functional Requirements](#Functional-Requirements)
+* [Technologies Implemented](#Technologies-Implemented)
 * [Author](#Author)
 
-## Functionality
-> Basically my project is based on a front-end web page, where it is possible to find the solution
-to the different bugs we have to deal with by getting the advice from users or even de admin.
-At the home page, we could see a simple welcome message, following by the developer's name and the
-link to the repository in GitHub, in case it is necessary to check the code. At the top of the home
-page we find four options (comments, issues, projects, users) the ones that allow us to navigate
-through the whole page.
-Going over the comments page, this option give us the possibility to see the current discussion
-on every bug, the solutions given, tips to do troubleshooting, etc.
-Then, over the issues page we have the choice to see all troubles have been emerged, so it is
-possible to have a look at them instead of duplicate the issues to avoid confussion between the users.
-The next stage is based on the projects page, it is possible to add as many projects as we want to,
-so if there is any issue according to the posts made, it will be easier to solve a trouble.
-The final page is the users one, as the name specifies every person who is interacting with the
-web page will be listed on this side, dont matter the usertype.
+## Project Context
+> I would like more people were aware about on how many meat-free and free-cruelty products are available 
+to buy, the main goal I have in mind is to create a web site where people could go there and check the list 
+of products. I completely understand that this project takes more than two months to get it done, so I would 
+like to develop the fundamentals and start building this final project. 
 
-## Set it up
-> First step, provide valid data to connect to our MongoDB, it means our credentials from MongoDB Atlas,
-once this is done, our database mentioned in our JavaScript will be ready to push and pull data.
-Second step is running our code, to perform this step, it will be neccessary to do it by "npm start",
-once this step is done, we just need to wait to get the "Server connected succesfully" message to 
-open the browser with the port indicated and we are ready to go.
+## Areas to cover
+> This project will use many technologies, reason why it is important to know the basic functionality of each tool applied.
+* Node js, being that it’s fast and it’s possible to use JS to build the client side as the server side.
+* Express js, as it is necessary to use a framework.
+* React, to structure our view by the different components.
+* JavaScript, being that most of the code will be written in this language
+* MongoDB, as our database, so it will be possible to store the information by documents and collections
+* Mongoose as Object Data Modelling (ODM) altogether with MongoDB Compass, to present our data, since the 
+project will use different collections
+* Bootstrap, to build the front-end framework.
+* Visual Studio Code, as we need to have a code editor.
+* Git BASH, to interact with the GitHub account, besides of the VSC terminal. This is not a must be, but 
+I like it because it is fast and simple.
 
-## Technologies used
-* MongoDB Atlas
-* Robo 3T
-* JavaScript
-* EJS
-* CSS
-* Visual Studio Code
-* React Native
+
+## Technologies Implemented
+* Front End
+**HTML
+HBS
+CSS
+JQuery
+Bootstrap
+React js
+* Back End
+Express js
+Node js
+* Database
+MongoDB
+Mongoose
+MongoDB Compass
+* Run-time environment
+Node js
+
 
 ## Example usage
 > As an example, in the web page we have a project with the name "Bug Tracker", this plan allows us
