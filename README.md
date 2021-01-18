@@ -36,6 +36,20 @@
 ## Technologies Implemented
 * Front End
   * HTML
+  * HBS
+  * CSS
+  * JQuery
+  * Bootstrap
+  * React js
+* Back End
+  * Express js
+* Database
+  * MongoDB
+  * Mongoose
+  * MongoDB Compass
+* Run-time environment
+  * Node js
+
  
 ## Author
 > <p align="justify"> My name is Christian Jesus Farfan Colin, I am originally from Mexico nowadays I am studying a higher diploma in Science in Computing at College of Computing and Technology (CCT), place where I was able to sharp my skills as developer. </p>
