@@ -3,8 +3,7 @@
 //https://getbootstrap.com/docs/5.0/getting-started/introduction/
 --}}
 <div class="login-box">
-    <h2>Checkout</h2>
-    <h3>Your Total: €{{total}}</h3>
+    <h2>Checkout<br>Total: €{{total}}</h3>
     <script>
         //This function will create and design the PDF file that will be available to save or download by the user
         function createPDF() {
@@ -76,9 +75,11 @@
             <label>Phone Number</label>
         </div>
         <div class="user-box">
-            <input type="text" id="email" required name="email">
+            <input type="text" id="email" required name="email" onkeydown="validation()">
             <label>E-mail</label>
+            <span id="text"></span>
         </div>
+        <br>
         <div class="user-box">
             <div class="form-group">
                 <br><br><br><br>
@@ -101,3 +102,34 @@
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+{{!--The email validation will be checked using the following code--}}
+<script type="text/javascript">
+    function validation() {
+      var form = document.getElementById("checkout-form");
+      var email = document.getElementById("email").value;
+      var text = document.getElementById("text");
+      var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  
+      if (email.match(pattern)) 
+      {
+        form.classList.add("valid");
+        form.classList.remove("invalid");
+        text.innerHTML = "Email address valid";
+        text.style.color = "#00ff00";
+      }
+      else {
+        form.classList.remove("valid");
+        form.classList.add("invalid");
+        text.innerHTML = "Please enter a valid email address";
+        text.style.color = "#ff0000";
+      }
+  
+      if (email == "") 
+      {
+        form.classList.remove("valid");
+        form.classList.remove("invalid");
+        text.innerHTML = "";
+        text.style.color = "#00ff00";
+      }
+    }
+</script>
