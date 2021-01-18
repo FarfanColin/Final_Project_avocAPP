@@ -31,8 +31,7 @@ I like it because it is fast and simple.
 
 ## Technologies Implemented
 * Front End
-  *HTML
-HBS
+ *HBS
 CSS
 JQuery
 Bootstrap
