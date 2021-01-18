@@ -1,5 +1,6 @@
 //References for this page:
 //https://github.com/antoniomdk/seminars_and_talks/blob/1a508e85d2087b4e8efb52cd5d012586779b7898/eslint_best_practices/routes/users.js
+//Youtube: "Academind" - https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w
 //It is importante to mention the order for each router, these routes belongs to  the index
 var express = require('express');
 var router = express.Router();
