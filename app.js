@@ -76,7 +76,7 @@ app.post('/', (req, res) => {
     <p>Customer message</p>
     <h3>Contact Details</h3>
     <ul>  
-      <li>Name: ${req.body.name}</li>
+      <li>Name: ${req.body.fullname}</li>
       <li>Email: ${req.body.email}</li>
       <li>Phone: ${req.body.phone}</li>
     </ul>
@@ -116,7 +116,7 @@ app.post('/', (req, res) => {
       console.log('Message sent: %s', info.messageId);   
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-      res.render('user/email_sent', {msg:'Email has been sent'});
+      res.render('user/email_sent_message', {msg:'Email has been sent'});
   });
   });
 

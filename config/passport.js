@@ -30,8 +30,7 @@ passport.use('local.signup', new LocalStrategy({
 }, function (req, email, password, done) {
     req.checkBody('email', 'Invalid email').notEmpty().isEmail();
     req.checkBody('password', 'Invalid password').notEmpty().isLength({ min: 4 });
-    var fname = req.body.fname;
-    var sname = req.body.sname;
+    var fullname = req.body.fullname;
     var phone = req.body.phone;
     var errors = req.validationErrors();
     if (errors) {
@@ -50,8 +49,7 @@ passport.use('local.signup', new LocalStrategy({
         }
         var newUser = new User();
         newUser.email = email;
-        newUser.fname = fname;
-        newUser.sname = sname;
+        newUser.fullname = fullname;
         newUser.phone = phone;
         //The next line is using the methods created on the user file, on the model folder
         newUser.password = newUser.encryptPassword(password);

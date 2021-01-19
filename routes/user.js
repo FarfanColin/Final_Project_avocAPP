@@ -57,8 +57,13 @@ router.get('/contactUs', isLoggedIn, function(req, res, next) {
 });
 
 //To confirm that an email has been sent to the user inbox, a "email sent" message will appear to confirm this action
-router.get('/email_sent', function(req, res, next) {
-  res.render('user/email_sent');
+router.get('/email_sent_message', function(req, res, next) {
+  res.render('user/email_sent_message');
+});
+
+//To confirm that an email has been sent to the user inbox, a "email sent" message will appear to confirm this action
+router.get('/email_sent_notification', function(req, res, next) {
+  res.render('user/email_sent_notification');
 });
 
 //At the moment that the user desire to leave the session, the "Log out" task will head to the home page
@@ -83,7 +88,7 @@ router.get('/signup', function (req, res, next) {
 
 //By this router it is possible to use the strategy applied on the passport file
 router.post('/signup', passport.authenticate('local.signup', {
-  successRedirect: '/user/email_sent',
+  successRedirect: '/user/email_sent_notification',
   failureRedirect: '/user/signup',
   failureFlash: true
 }));

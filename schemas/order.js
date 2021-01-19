@@ -12,8 +12,7 @@ var schema = new Schema({
     cart: { type: Object, required: true },
     phone: { type: String, required: true },
     email: { type: String, required: true },
-    surname: { type: String, required: true },
-    name: { type: String, required: true },
+    fullname: { type: String, required: true },
     time: { type: Date, required: true },
     //The next lines will help the admin to manage the orders picked by mongoose or MongoDB Compass
     status: { type: String, required: false },

@@ -4,13 +4,14 @@
 //https://www.youtube.com/watch?v=HzJngc-Se9Q
 --}}
 <div class="login-box">
-    <h2>Checkout<br>Total: €{{total}}</h3>
+    <strong><h3>Checkout<br>Total: €{{total}}</h3></strong>
+    <h5>In order to process your receipt, it is necessary to fill in the following fields</h5>
     <script>
         //This function will create and design the PDF file that will be available to save or download by the user
         function createPDF() {
 
             //Setting the fields to take into the PDF file
-            if (document.getElementById("name").value == "" || document.getElementById("surname").value == "" || document.getElementById("phone").value == "" || document.getElementById("email").value == "" || document.getElementById("time").value == "") {
+            if (document.getElementById("fullname").value == "" || document.getElementById("phone").value == "" || document.getElementById("email").value == "" || document.getElementById("time").value == "") {
                 alert("Please enter all the fields");
             }
 
@@ -35,8 +36,7 @@
                 doc.setTextColor(150);
                 doc.setFontSize(15);
                 doc.setFontType("normal");
-                doc.text(document.getElementById("name").value, 10, 60);
-                doc.text(document.getElementById("surname").value, 10, 80);
+                doc.text(document.getElementById("fullname").value, 10, 80);
                 doc.text(document.getElementById("phone").value, 10, 100);
                 doc.text(document.getElementById("email").value, 10, 120);
                 doc.text(document.getElementById("time").value, 10, 140);
@@ -46,8 +46,7 @@
                 doc.setFontSize(20);
                 doc.setFont("helvetica");
                 doc.setFontType("bold");
-                doc.text(10, 50, "NAME:");
-                doc.text(10, 70, "SURNAME:");
+                doc.text(10, 70, "FULL NAME:");
                 doc.text(10, 90, "PHONE:");
                 doc.text(10, 110, "EMAIL:");
                 doc.text(10, 130, "HOUR/DATE TO PICK UP:");
@@ -64,12 +63,8 @@
     </script>
     <form action="/checkout" method="post" id="checkout-form">
         <div class="user-box">
-            <input type="text" id="name" required name="name">
-            <label>Name</label>
-        </div>
-        <div class="user-box">
-            <input type="text" id="surname" required name="surname">
-            <label>Surname</label>
+            <input type="text" id="fullname" required name="fullname">
+            <label>Full Name</label>
         </div>
         <div class="user-box">
             <input type="text" id="phone" required name="phone">
@@ -134,3 +129,12 @@
       }
     }
 </script>
+
+<style>
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  filter: invert(1);
+}
+</style>

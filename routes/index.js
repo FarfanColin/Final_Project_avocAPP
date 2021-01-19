@@ -27,8 +27,13 @@ router.get('/', function (req, res, next) {
 });
 
 //To confirm that an email has been sent to the user inbox, a "email sent" message will appear to confirm this action
-router.get('/user/email_sent', function (req, res, next) {
-  res.render('user/email_sent');
+router.get('/user/email_sent_message', function (req, res, next) {
+  res.render('user/email_sent_message');
+});
+
+//To confirm that an email has been sent to the user inbox, a "email sent" message will appear to confirm this action
+router.get('/user/email_sent_notification', function (req, res, next) {
+  res.render('user/email_sent_notification');
 });
 
 //By this router, each item will be added by the "id"
@@ -113,8 +118,7 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
     cart: cart,
     phone: req.body.phone,
     email: req.body.email,
-    surname: req.body.surname,
-    name: req.body.name,
+    fullname: req.body.fullname,
     time: req.body.time,
     status: statusOrder,
     pickedAt: picked

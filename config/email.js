@@ -21,7 +21,8 @@ module.exports = () => {
           <li>Email:${email}</li>
         </ul>
         <h3>YOU ARE READY TO GO!</h3>
-        <p>Now you can start order online, just go back to the home page</p>
+        <p>Now you can start order online, just go back to the home page:<br>
+        https://avoccapp.herokuapp.com/user/login</p>
       `;
 
     // Setting the port by the "Gmail host", using the default SMTP transport
@@ -55,7 +56,7 @@ module.exports = () => {
       console.log('Message sent: %s', info.messageId);
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-      res.render('user/email_sent', { layout: false });
+      res.render('user/email_sent_notification', { layout: false });
     });
   }
 
