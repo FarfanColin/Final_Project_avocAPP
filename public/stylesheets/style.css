@@ -3,7 +3,7 @@
 /*Additionally to this css code, I used in other files, just to define small pieces of design*/
 
 body {
-    height: 756px;
+    height: 100vh;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
