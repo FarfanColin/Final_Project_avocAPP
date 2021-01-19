@@ -5,8 +5,9 @@
 //If it is necessary to add items to my web application, one option is by this file, another option could be by mongoose or by MongoDB
 var Product = require('../schemas/product');
 var mongoose = require('mongoose');
+const uri = process.env.MONGO_URI;
 
-mongoose.connect('mongodb://localhost:27017/myDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 var products = [
     new Product({
