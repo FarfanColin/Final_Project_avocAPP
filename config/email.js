@@ -22,7 +22,7 @@ module.exports = () => {
         </ul>
         <h3>YOU ARE READY TO GO!</h3>
         <p>Now you can start order online, just go back to the home page:<br>
-        https://avoccapp.herokuapp.com/user/login</p>
+        https://avocapp.herokuapp.com//user/login</p>
       `;
 
     // Setting the port by the "Gmail host", using the default SMTP transport
